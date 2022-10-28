@@ -18,7 +18,7 @@ const Transactions = () => {
   useEffect(() => {
     const fetchData = async () => {
       console.log(api);
-      const data = await api.get(`user/${params.id}`);
+      const data = await api.get(`/user/${params.id}`);
       console.log(data);
       setUserData(data.data[0]);
       setUserBankAccount(data.data[1]);
