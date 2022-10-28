@@ -1,0 +1,58 @@
+GET https://bank-erichu.herokuapp.com/api/users
+
+###
+
+GET http://localhost:5000/api/users
+
+
+###
+POST http://localhost:5000/api/user HTTP/1.1
+Content-type: application/json
+
+{
+    "name": "EricChuko",
+    "mobile" : "0559544756",
+    "email": "eric@gmail.com",
+    "password": "102938475"
+        
+}
+
+###
+
+POST http://localhost:5000/api/user HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Johnny Hamudi",
+    "mobile" : "0549544649",
+    "email": "Johnny@bravossss.com",
+    "password": "19328352",
+    "cash": "500",
+    "credit": "400"
+}
+
+###
+PUT http://localhost:5000/api/deposit/63580a42eb55e32c0124f783 HTTP/1.1
+content-type: application/json
+
+{
+    "amount": "100"
+}
+
+###
+PUT http://localhost:5000/api/withdraw/63580a42eb55e32c0124f783 HTTP/1.1
+content-type: application/json
+
+{
+    "amount": "100"
+}
+
+###
+PUT http://localhost:5000/api/transferMoney/635819c1e8d3e22b6312e02a HTTP/1.1
+content-type: application/json
+
+{
+    "amount": "100",
+    "email": "Johnny@bravossss.com"
+}
+
