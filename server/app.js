@@ -3,7 +3,8 @@ const userRouter = require("./routers/user");
 require("./db/mongoose");
 const cors = require("cors");
 const path = require("path");
-const contentSecurityPolicy = require("helmet-csp");
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
+// const contentSecurityPolicy = require("helmet-csp");
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -13,20 +14,9 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(
-  contentSecurityPolicy({
-    useDefaults: true,
-    directives: {
-      defaultSrc: ["'self'", "default.example"],
-      scriptSrc: ["'self'", "js.example.com"],
-      objectSrc: ["'none'"],
-      upgradeInsecureRequests: [],
-    },
-    reportOnly: false,
-  })
-);
 
-const publicPath = path.join(__dirname, "./client/build");
+
+const publicPath = path.join(__dirname, "../client/build");
 app.use(express.static(publicPath));
 //
 
