@@ -5,9 +5,11 @@ import Client from "./Clients";
 import Nav from "./Nav";
 import Transactions from "./Transactions";
 import User from "./User";
+import api from "../api/Api";
 
 const App = () => {
   console.log(process.env.NODE_ENV);
+  console.log(api);
   return (
     <>
       <Router>

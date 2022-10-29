@@ -8,7 +8,7 @@ const Client = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const usersData = await api.get("/users");
+      const usersData = await api.get("users");
       setClients(usersData.data);
     };
     fetchData();
