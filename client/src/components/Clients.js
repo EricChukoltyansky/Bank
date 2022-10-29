@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import api from "../api/Api";
+console.log(api);
 
 const Client = () => {
   const [clients, setClients] = useState([]);
 
   useEffect(() => {
-    console.log(api);
     const fetchData = async () => {
       const usersData = await api.get("/users");
       setClients(usersData.data);
