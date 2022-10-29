@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import api from "../api/Api";
+import axios from "axios";
 
 const Client = () => {
   const [clients, setClients] = useState([]);
 
   useEffect(() => {
+    console.log(api);
     const fetchData = async () => {
-      const usersData = await api.get('/users');
+      const usersData = await axios.get(
+        "https://bankmanager.onrender.com/users"
+      );
       setClients(usersData.data);
     };
     fetchData();

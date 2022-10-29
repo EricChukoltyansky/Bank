@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
-// import api from "../api/Api";
 import api from "../api/Api";
 
 const Transactions = () => {
@@ -9,6 +8,7 @@ const Transactions = () => {
 
   const params = useParams();
   const [amount, setAmount] = useState(0);
+
   const depositRef = useRef(null);
   const witdrawRef = useRef(null);
   const creditRef = useRef(null);
@@ -17,7 +17,6 @@ const Transactions = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      console.log(api);
       const data = await api.get(`/user/${params.id}`);
       console.log(data);
       setUserData(data.data[0]);
@@ -108,7 +107,6 @@ const Transactions = () => {
         ref={creditRef}
       />
       <button onClick={creditHandle}>Add credit</button>
-      {/* <br /> */}
       <div>
         <input type="text" placeholder="Receiver" ref={transferEmailRef} />
         <input
